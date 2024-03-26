@@ -23,7 +23,7 @@ const App = () => {
 //     <>
 //     <Description />
 //     <Options />
-//     <Feetback />
+//     <Feedback />
 //     </>
       
 //   )
