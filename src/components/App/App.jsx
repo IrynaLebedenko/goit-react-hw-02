@@ -16,7 +16,7 @@ const App = () => {
     <div>
       <Description />
       <Options />
-     <Feedback /> 
+     {/* <Feedback />  */}
     </div>
   );
 }
