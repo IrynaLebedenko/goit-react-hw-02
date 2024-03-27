@@ -1,7 +1,9 @@
-// import React from 'react';
+
 import { useState } from 'react'
-import './App.css'
-import Description from './components/Description/Description'
+// import css from './App.css'
+import Description from '../Description/Description'
+import Options from '../Options/Options';
+import Feedback from '../Feedback/Feedback';
 
 const App = () => {
   const [feedbackTypes, setFeedbackTypes] = useState({
@@ -12,7 +14,9 @@ const App = () => {
 
   return (
     <div>
-      {/* Ваша реалізація компонента */}
+      <Description />
+      <Options />
+     <Feedback /> 
     </div>
   );
 }
