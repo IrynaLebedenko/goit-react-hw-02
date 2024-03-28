@@ -20,36 +20,15 @@ const App = () => {
   });
 
   useEffect(() => {
-    const savedStats = window.localStorage.getItem('stats');
-    if (savedStats === null) {
     window.localStorage.setItem("stats", JSON.stringify(values));
-    }
   }, [values]);
 
-  // useEffect(() => {
-  //   const handleUnload = () => {
-  //     window.localStorage.removeItem('stats');
-  //   };
-  
-  //   window.addEventListener('beforeunload', handleUnload);
-  
-  //   return () => {
-  //     window.removeEventListener('beforeunload', handleUnload);
-  //   };
-  // }, []);
-
-  
   const updateFeedback = (feedbackType) => {
     if (feedbackType === "reset") {setValues({ good: 0, neutral: 0, bad: 0 });
-    window.localStorage.setItem('stats', JSON.stringify({ good: 0, neutral: 0, bad: 0}));
   } else {
       setValues((prevValues) => ({
         ...prevValues,
         [feedbackType]: prevValues[feedbackType] + 1,
-      }));
-      window.localStorage.setItem('stats', JSON.stringify({
-        ...values,
-        [feedbackType]: values[feedbackType] + 1,
       }));
     }
   };
