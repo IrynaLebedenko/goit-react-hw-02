@@ -1,5 +1,6 @@
 import css from './Options.module.css';
 
+
 const Options = ({ update, totalFeedback}) => {
     return (
         <ul className={css.div}>
