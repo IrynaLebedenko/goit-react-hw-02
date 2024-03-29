@@ -24,14 +24,16 @@ const App = () => {
   }, [values]);
 
   const updateFeedback = (feedbackType) => {
-    if (feedbackType === "reset") {setValues({ good: 0, neutral: 0, bad: 0 });
-  } else {
       setValues((prevValues) => ({
         ...prevValues,
         [feedbackType]: prevValues[feedbackType] + 1,
       }));
-    }
   };
+
+  const resetFeedback = ()  => {
+    setValues({ good: 0, neutral: 0, bad: 0,})
+
+}
 
   const totalFeedback = values.good + values.neutral + values.bad;
   const positivePercent = Math.round(
@@ -41,7 +43,9 @@ const App = () => {
   return (
     <>
       <Description />
-      <Options update={updateFeedback} totalFeedback={totalFeedback} />
+      <Options 
+      resetFeedback={resetFeedback}
+      update={updateFeedback} totalFeedback={totalFeedback} />
       {totalFeedback > 0 ? (
         <div className="feedback">
           <Feedback

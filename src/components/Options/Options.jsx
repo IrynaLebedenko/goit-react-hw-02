@@ -1,7 +1,7 @@
 import css from './Options.module.css';
 
 
-const Options = ({ update, totalFeedback}) => {
+const Options = ({ update, resetFeedback, totalFeedback}) => {
     return (
         <ul className={css.div}>
             <li>
@@ -15,7 +15,7 @@ const Options = ({ update, totalFeedback}) => {
             </li>
             {totalFeedback > 0 && (
             <li>
-            <button className = {css.btn} onClick = {() => update("reset")}>Reset</button>
+            <button className = {css.btn} onClick = {() => resetFeedback()}>Reset</button>
             </li>
             )}
         </ul>
